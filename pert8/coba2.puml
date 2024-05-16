@@ -1,0 +1,25 @@
+@startuml
+autonumber "<b> ."
+actor user 
+participant "menu" as m
+participant "pilih menu" as pil 
+participant "aku" as a 
+participant "dia" as d 
+participant "quantity" as qty 
+participant "total" as tot 
+participant "exit" as x
+
+user --> m: tampilkan menu utama
+m--> pil: pilih menu 1 atau 2, pilih aku atau dia
+pil--> a: menampilkan profile aku
+a--> qty: masukan jumlah quantity
+qty-->tot: print
+tot<-- m: kembali ke menu
+pil--> d: menampilkan profile dia
+d--> qty: masukkn jumlah quantity
+qty--> tot: print
+tot--> x: jika pilihan exit
+m<-- tot: kembali ke menu
+
+
+@enduml

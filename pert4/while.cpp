@@ -5,8 +5,10 @@ using namespace std;
 
     void penggunaandowhile(){
         do
-        {
-            /* code */
+        { cout << a << endl;
+        a = a+1;
+        
+            
         } while (/* condition */);
         
 
