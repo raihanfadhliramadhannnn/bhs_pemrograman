@@ -1,0 +1,37 @@
+@startuml
+class Produk {
+  - nama: str
+  - harga: float
+  + set_harga(new_harga: float)
+  + get_harga() : float
+}
+
+class Order {
+  - order_id: int
+  - produk: Produk
+  - jumlah: int
+  - total: float
+  - status: str
+  - tanggal: date
+  + update_status(new_status: str)
+}
+
+class Pelanggan {
+  - pelanggan_id: int
+  - nama: str
+  - kontak: str
+  - riwayat_order: list
+  + tambah_order(order: Order)
+}
+
+class Penjualan {
+  - tanggal: date
+  - total_pemasukan: float
+  + tambah_penjualan(order: Order)
+  + get_total_pemasukan() : float
+}
+
+Produk "1" -- "0..*" Order
+Pelanggan "1" -- "0..*" Order
+Order "1" -- "1" Penjualan
+@enduml

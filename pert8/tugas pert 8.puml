@@ -1,0 +1,27 @@
+@startuml
+entity "Produk" as produk {
+  + nama_produk
+  + formula
+  + kemasan
+}
+
+entity "Data Penjualan" as penjualan {
+  + tanggal
+  + jumlah_terjual
+}
+
+entity "Target Penjualan" as target {
+  + bulan
+  + target_jumlah
+}
+
+produk --* penjualan
+penjualan --* target
+
+rectangle "Harga Jual" {
+  + harga_produk
+}
+
+produk --o "Harga Jual"
+
+@enduml
