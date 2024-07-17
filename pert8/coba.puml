@@ -1,0 +1,13 @@
+@startuml
+
+[*] --> Menu 
+Menu : 1. Aku
+Menu : 2. Dia
+Menu --> pilihan
+pilihan : masukkan pilihan Anda 
+pilihan --> Menu : pilihan anda salah
+pilihan --> Aku: ok
+pilihan --> Dia: ok
+Dia --> [*] : selesai
+Aku --> [*] : selesai
+@enduml
